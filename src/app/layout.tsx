@@ -1,3 +1,5 @@
+import { Footer } from "@/components/Footer";
+import { Sidebar } from "@/components/Sidebar";
 import "./globals.css";
 
 export const metadata = {
@@ -12,7 +14,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-zinc-900 text-zinc-50">{children}</body>
+      <body className="h-screen flex flex-col bg-zinc-900 text-zinc-50">
+        <div className="flex flex-1">
+          <Sidebar />
+          {children}
+        </div>
+        <Footer />
+      </body>
     </html>
   );
 }

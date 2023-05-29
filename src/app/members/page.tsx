@@ -1,18 +1,14 @@
-import { Footer } from "@/components/Footer";
-import { Sidebar } from "@/components/Sidebar";
+import { ProfileCard } from "@/components/ProfileCard";
 
 export default function Members() {
   return (
-    <div className="h-screen flex flex-col bg-zinc-900 text-zinc-50">
-      <div className="flex flex-1">
-        <Sidebar />
-        <main className="flex-1 p-6">
-          <div className="flex items-center">
-            <h1 className="text-3xl font-semibold">Nossa Equipe</h1>
-          </div>
-        </main>
+    <main className="flex-1 p-6">
+      <h1 className="text-3xl font-semibold">Nossa Equipe</h1>
+
+      <div className="h-full flex justify-center items-center flex-row flex-wrap-reverse">
+        <ProfileCard name="Shindi Toyama" description="Programador" />
+        <ProfileCard name="Evertton" description="Designer" />
       </div>
-      <Footer />
-    </div>
+    </main>
   );
 }

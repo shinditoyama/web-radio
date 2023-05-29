@@ -1,18 +1,42 @@
-import { Footer } from "@/components/Footer";
-import { Sidebar } from "@/components/Sidebar";
+import Feature from "@/components/Feature";
 
 export default function About() {
   return (
-    <div className="h-screen flex flex-col bg-zinc-900 text-zinc-50">
-      <div className="flex flex-1">
-        <Sidebar />
-        <main className="flex-1 p-6">
-          <div className="flex items-center">
-            <h1 className="text-3xl font-semibold">Sobre nós</h1>
+    <main className="flex-1 p-6">
+      <h1 className="text-3xl font-semibold">Sobre nós</h1>
+
+      <article className="max-w-5xl px-6 py-16 mx-auto">
+        <div className="space-y-8 text-center">
+          <h1 className="text-2xl font-bold leading-tight">
+            Como a Crazy Rock surgiu
+          </h1>
+          <p className="text-base lg:px-24">
+            Aqui deve colocar um texto contando sobre a história da empresa como
+            ela surgiu, de onde veio a necessidade sobre a empresa, qual o foco
+            da empresa e a relevância sobre a empresa no atual cenário
+          </p>
+        </div>
+
+        <div className="pt-12 mt-12 border-t">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <Feature
+              title="Missão"
+              description="Sed non nibh iaculis, posuere diam vitae, consectetur neque. 
+              Integer velit ligula, semper sed nisl in, cursus commodo elit."
+            />
+            <Feature
+              title="Visão"
+              description="Sed non nibh iaculis, posuere diam vitae, consectetur neque. 
+              Integer velit ligula, semper sed nisl in, cursus commodo elit."
+            />
+            <Feature
+              title="Valores"
+              description="Sed non nibh iaculis, posuere diam vitae, consectetur neque. 
+              Integer velit ligula, semper sed nisl in, cursus commodo elit."
+            />
           </div>
-        </main>
-      </div>
-      <Footer />
-    </div>
+        </div>
+      </article>
+    </main>
   );
 }

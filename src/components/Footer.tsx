@@ -1,4 +1,6 @@
 "use client";
+import { typeState } from "@/store/atoms";
+import { useAtom } from "jotai";
 import { PauseCircle, PlayCircle, Volume } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
@@ -6,6 +8,7 @@ export function Footer() {
   const [playing, setPlaying] = useState<boolean>(false);
   const [volume, setVolume] = useState<number>(80);
   const audioRef = useRef<any>();
+  const [types] = useAtom(typeState);
 
   useEffect(() => {
     if (audioRef) {
@@ -28,18 +31,15 @@ export function Footer() {
   return (
     <footer className="bg-zinc-800 border-t border-zinc-700 p-6 flex items-center justify-between">
       <div className="flex items-center gap-2">
-        Imagem
+        <img src={types?.cover} width={56} height={56} alt="Capa do album" />
         <div className="flex flex-col">
           <strong>Música {playing ? "Tocando" : "Pausado"}</strong>
-          <span>Artista</span>
+          <span>{types?.name}</span>
         </div>
       </div>
       <div className="flex flex-col items-center">
         <div>
-          <audio
-            ref={audioRef}
-            src="https://jking.cdnstream1.com/b22139_128mp3"
-          />
+          <audio ref={audioRef} src={types?.url} />
           <button onClick={toggle} className="flex items-center justify-center">
             {playing ? <PauseCircle size={40} /> : <PlayCircle size={40} />}
           </button>

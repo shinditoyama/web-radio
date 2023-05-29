@@ -1,18 +1,13 @@
-import { Footer } from "@/components/Footer";
-import { Sidebar } from "@/components/Sidebar";
+import Album from "@/components/Album";
 
 export default function Home() {
   return (
-    <div className="h-screen flex flex-col bg-zinc-900 text-zinc-50">
-      <div className="flex flex-1">
-        <Sidebar />
-        <main className="flex-1 p-6">
-          <div className="flex items-center">
-            <h1 className="text-3xl font-semibold">Página Inicial</h1>
-          </div>
-        </main>
+    <main className="flex-1 p-6">
+      <h1 className="text-3xl font-semibold">Página Inicial</h1>
+
+      <div className="h-full flex justify-center items-center">
+        <Album />
       </div>
-      <Footer />
-    </div>
+    </main>
   );
 }

@@ -1,16 +1,27 @@
+"use client";
+import { playingAtom, radioAtom } from "@/store/atoms";
+import { useAtom } from "jotai";
+
 export default function Album() {
+  const [radio] = useAtom(radioAtom);
+  const [playing] = useAtom(playingAtom);
+
   return (
     <div className="flex flex-col lg:flex-row gap-8">
-      <div className="relative w-60 h-52 block rounded-lg border-4 border-black bg-white">
-        <span className="absolute inset-0 -z-10 -translate-x-2 translate-y-2 rounded-lg bg-white ring-4 ring-black"></span>
-        <div className="p-4 sm:p-6 lg:p-8">
-          {/*<p className="text-lg font-bold text-zinc-800">Alert Components</p>
-          <p className="mt-1 font-mono text-xs text-zinc-800">7 Components</p>*/}
-        </div>
+      <div className="relative w-80 h-80 block rounded border-4 border-black bg-white">
+        <span className="absolute overflow-hidden inset-0 translate-x-4 -translate-y-4 rounded border-4 border-black">
+          <img
+            src={radio?.cover}
+            className="object-fill w-full h-full"
+            alt="Capa do album"
+          />
+        </span>
       </div>
-      <div className="">
-        <h2 className="text-4xl text-white font-semibold">band</h2>
-        <p className="text-lg font-thin text-white">music</p>
+      <div className="text-center lg:text-left">
+        <h2 className="text-4xl text-white font-semibold">{radio?.name}</h2>
+        <p className="text-lg font-thin text-white">
+          Música {playing ? "Tocando" : "Pausado"}
+        </p>
 
         <button className="button">
           {/*playing ? <BsPlayFill /> : <BsFillPauseFill />*/}

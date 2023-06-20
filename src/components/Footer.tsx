@@ -2,6 +2,7 @@
 import { playingAtom, radioAtom } from "@/store/atoms";
 import { useAtom } from "jotai";
 import { PauseCircle, PlayCircle, Volume } from "lucide-react";
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
 export function Footer() {
@@ -32,7 +33,7 @@ export function Footer() {
   return (
     <footer className="h-24 bg-zinc-800 border-t border-zinc-700 p-6 flex items-center justify-between">
       <div className="flex items-center gap-2  w-full h-full">
-        <img src={radio?.cover} width={56} height={56} alt="Capa do album" />
+        <Image src={radio?.cover} width={56} height={56} alt="Capa do album" />
         <div className="sm:flex flex-col hidden">
           <strong>Música {playing ? "Tocando" : "Pausado"}</strong>
           <span>{radio?.name}</span>

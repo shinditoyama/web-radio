@@ -11,8 +11,14 @@ export default function Members() {
       <h1 className="text-3xl font-semibold">Nossa Equipe</h1>
 
       <div className="h-full flex justify-center items-center flex-row flex-wrap-reverse gap-8 py-12">
-        <ProfileCard name="Shindi Toyama" description="Programador" />
-        <ProfileCard name="Evertton" description="Designer" />
+        <ProfileCard name="Jack Fahrer" image="/img/member2.jpeg" />
+        <ProfileCard name="Magosso" image="/img/member1.jpeg" />
+        <ProfileCard name="Dudu" image="/img/member3.jpeg" />
+        <ProfileCard name="Luis Fernando" image="/img/member5.jpeg" />
+        <ProfileCard name="Leandro" image="/img/member4.jpeg" />
+        <ProfileCard name="Fabinho Rezende" image="/img/member8.jpeg" />
+        <ProfileCard name="Luiz Domingues" image="/img/member6.jpeg" />
+        <ProfileCard name="Julião" image="/img/member7.jpeg" />
       </div>
     </main>
   );

@@ -8,14 +8,14 @@ interface Props {
 
 export function ProfileCard({ name, image, description }: Props) {
   return (
-    <div className="flex flex-col justify-center w-full text-center rounded-md mt-8 md:mt-4 md:w-96 lg:w-80 xl:w-64 bg-white">
+    <div className="flex flex-col justify-center w-full text-center rounded-md mt-8 md:mt-4 md:w-80 lg:w-56 bg-white">
       <div className="self-center flex-shrink-0 -mt-12 bg-center bg-cover">
         <Image
           alt="avatar"
           src={image}
-          width={148}
-          height={148}
-          className="w-28 h-28 object-cover object-center rounded-full"
+          width={156}
+          height={156}
+          className="w-32 h-32 object-cover object-center rounded-full"
         />
       </div>
       <div className="flex-1 my-4">

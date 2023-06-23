@@ -2,6 +2,7 @@
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { Sidebar } from "@/components/Sidebar";
+import Head from "next/head";
 import { ReactNode, useCallback, useState } from "react";
 import "./globals.css";
 
@@ -14,6 +15,12 @@ export default function RootLayout({ children }: { children: ReactNode }) {
 
   return (
     <html lang="en">
+      <Head>
+        <meta
+          httpEquiv="Content-Security-Policy"
+          content="upgrade-insecure-requests"
+        />
+      </Head>
       <body className="h-screen flex flex-col bg-zinc-900 text-zinc-50">
         <Header open={open} handleOpen={handleSidebarOpen} />
         <div className="flex flex-1">
